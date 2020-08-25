@@ -1,5 +1,5 @@
 import os
-from download_gdrive import *
+from vid2vid_lib.scripts.download_gdrive import *
 
 file_id = '1rPcbnanuApZeo2uc7h55OneBkbcFCnnf'
 chpt_path = './datasets/'

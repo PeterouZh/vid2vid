@@ -93,10 +93,16 @@ class BaseOptions():
                 ids_list.append(id)
         return ids_list
 
+    def buildl_opt(self):
+        if not self.initialized:
+            self.initialize()
+        self.opt = self.parser.parse_args([])
+
     def parse(self, save=True):
         if not self.initialized:
             self.initialize()
-        self.opt = self.parser.parse_args()
+        if not hasattr(self, 'opt'):
+            self.opt = self.parser.parse_args()
         self.opt.isTrain = self.isTrain   # train or test
         
         self.opt.fg_labels = self.parse_str(self.opt.fg_labels)

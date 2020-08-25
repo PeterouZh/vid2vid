@@ -25,4 +25,4 @@ def unzip_file(file_name, unzip_path):
     zip_ref = zipfile.ZipFile(file_name, 'r')
     zip_ref.extractall(unzip_path)
     zip_ref.close()
-    os.remove(file_name)
+    # os.remove(file_name)
